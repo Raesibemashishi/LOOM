@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lay_out_Flex.Abs_olut_lay_out"
+             Title="Abs_olut_lay_out"
+            NavigationPage.HasNavigationBar="False">
+
+    <AbsoluteLayout BackgroundColor="LightGray">
+        <!--Lable positioned at (0.1, 0.1) relative to page-->
+        <Label Text="Top Left Label"
+               TextColor="Black"
+               FontSize="18"
+               AbsoluteLayout.LayoutBounds="0.1 , 0.1, AutoSize,AutoSize"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <!--Button centered in the page-->
+        <Button Text="Centered Button"
+                BackgroundColor="DodgerBlue"
+                TextColor="White"
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 200, 50"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <!--Image Pinned to the right-->
+        <Image Source="dotnet_bot.png"
+               AbsoluteLayout.LayoutFlags="YProportional"
+               AbsoluteLayout.LayoutBounds="1, 1, 300, 200"
+               />
+
+    </AbsoluteLayout>
+    
+</ContentPage>

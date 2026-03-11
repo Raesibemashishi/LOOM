@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1pROPERTIES.BISHI"
+             Title="BISHI">
+    <VerticalStackLayout>
+        <Label  Text="welcome to page Bishi"
+                FontSize="26"
+                TextColor="RosyBrown"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                FontAttributes="Bold"/>
+        <DatePicker MaximumDate="01-31-2030"
+                    MinimumDate="01-02-2001"
+                    Date="04-03-2026"
+                    HorizontalOptions="Center"
+                    />
+        <SearchBar Placeholder="Search for  a Monkey"
+                   VerticalOptions="Center"/>
+
+        <Picker x:Name="Picker"
+                Title="Select A Monkey">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type  x:String}">
+                    <x:String>Baboon</x:String>
+                    <x:String>Blue Monkey</x:String>
+                    <x:String>Capuchin Monkey</x:String>
+                    <x:String>Squirrel Monkey</x:String>
+                    <x:String>Golden Lion Tamarin</x:String>
+                    <x:String>Howler Monkey</x:String>
+                    <x:String>Japanese Monkey</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+    </VerticalStackLayout>
+</ContentPage>

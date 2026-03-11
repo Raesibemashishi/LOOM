@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1pROPERTIES.MainPage"
+            
+             Shell.NavBarIsVisible="False">
+   <ScrollView >
+    <StackLayout  Orientation="Vertical"
+                  Spacing="25"
+                  Padding="50"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center">
+        <Label Text="Euphoric Bishi"
+               TextColor="Pink"
+               CharacterSpacing="10"
+               HorizontalTextAlignment="Justify"
+            />
+        <Label  Text="Euphoric &#10; Bishi"
+                TextColor="Red" 
+                HorizontalOptions="Start"
+                CharacterSpacing="20"/>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <!--First span : Bold and Blue-->
+                    <Span Text="Euphoric  "
+                          FontAttributes="Bold" 
+                          TextColor="Blue"
+                          />
+                    <!--Second span : Italic and Green-->
+                    <Span Text="Bishi  "
+                          TextColor="Green"
+                          FontAttributes="Italic"
+                          />
+                    <Span Text="  EUPHORIC BISHI"
+                          CharacterSpacing="35"
+                          TextColor="RED"/>
+
+                    
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Image Source="maphefo.jpg"
+               IsOpaque="False"
+               Opacity="0.5"
+               WidthRequest="100"
+               HeightRequest="100"
+               />
+
+            <BoxView
+                 WidthRequest="100"
+                 HeightRequest="100"
+                 Color="Yellow"
+                IsVisible="False"
+               />
+
+            <ImageButton  Source="maphefo.jpg"
+                          BackgroundColor="Pink"
+                          Aspect="AspectFill"
+                          BorderColor="Red"
+                          CornerRadius="5"
+                          HorizontalOptions="Center"
+                          BorderWidth="5"
+                          WidthRequest="60"
+                          HeightRequest="60"
+                          IsVisible="False"/>
+            <Button Text="GO"
+                    Clicked="Button_Clicked"
+                    BackgroundColor="Black"
+                    FontSize="10"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="25"
+                    WidthRequest="50"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    CornerRadius="50"
+                />
+            <Entry Placeholder="Enter your name"
+                   PlaceholderColor="RED"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   MaxLength="10"/>
+            <Editor Placeholder="suggestion"
+                  PlaceholderColor="Green"
+                  HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"
+                     MaxLength="10"/>
+            <Frame BorderColor="Blue"
+                   BackgroundColor="Azure"
+                   CornerRadius="20">
+                <Label
+                    Text="I love you"
+                    TextColor="Black"
+                    FontAttributes="Bold"/>
+                
+                
+            </Frame>
+        
+            <Frame BorderColor="Black"
+                   CornerRadius="10"
+                   Padding="8">
+                <StackLayout>
+                    <Label  Text=" Euphoria"
+                            FontSize="14"
+                            FontAttributes="Bold"/>
+                    <BoxView Color="Gray"
+                             HeightRequest="2"
+                             HorizontalOptions="Fill"/>
+                    <Label Text="Euphoria (/juːˈfɔːriə/ yoo-FOR-ee-ə) is the experience (or affect) of pleasure or excitement and intense feelings of well-being and happiness. Certain natural rewards and social activities, such as aerobic exercise, laughter, listening to or making music and dancing, can induce a state of euphoria"/>
+                </StackLayout>
+                
+            </Frame>
+
+            <TimePicker Time="4:15:26"
+                       FontAttributes="Bold"
+                        TextColor="Blue"
+                        CharacterSpacing="10"
+                        />
+            <Switch IsToggled="True"
+                    OnColor="Red"
+                    ThumbColor="Pink"
+                    />
+           
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
