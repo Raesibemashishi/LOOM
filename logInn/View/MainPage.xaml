@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="logInn.MainPage"
+             Shell.NavBarIsVisible="False"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI">
+
+   <!--Divide the page into two-->
+    <Grid  RowDefinitions=".30*,.70*">
+        <Image Source="netmauiwallpaper.png" Aspect="Fill"/>
+        <Grid BackgroundColor="White" Opacity=".3"/>
+        <!--Divide the 30% into two parts-->
+        <Grid  ColumnDefinitions="*,*">
+            <Image Source="dotnet_bot.png" HeightRequest="100"
+                   WidthRequest="150"
+                   VerticalOptions="Center"/>
+
+            <!--Animation-->
+            <skia:SKLottieView Grid.Column="1"
+                               Source="powerwalk.json"
+                               RepeatCount="-1"/>
+
+        </Grid>
+        
+        <!--Using the remaining 70% part-->
+        <Grid Grid.Row="1">
+            <RoundRectangle Fill="Purple" CornerRadius="30,30,0,0" Margin="-2,-20,-2,0"/>
+            <VerticalStackLayout Margin="30,0,30,0">
+                <!--Welcome Label Text-->
+                <Label Text="Welcome to Bishi Codes"
+                       HorizontalOptions="Center"
+                       FontSize="25"
+                       TextColor="White"
+                       FontAttributes="Bold"/>
+
+                <Label Text="Log in to continue" 
+                       HorizontalOptions="Center"
+                       TextColor="White"/>
+
+                <!--Email-->
+                <StackLayout Orientation="Horizontal">
+                    <Border BackgroundColor="White" HeightRequest="50" WidthRequest="50" Stroke="Red" StrokeThickness="2"
+                            StrokeShape="RoundRectangle 10"
+                            Margin="0,50,0,0" ZIndex="1">
+                        <Image Source="emailiconn.png"/>
+                    </Border>
+
+                    <Border BackgroundColor="White" HeightRequest="50"  Stroke="Red" StrokeThickness="2"
+                            StrokeShape="RoundRectangle 10" Margin="-15,50,0,0" HorizontalOptions="FillAndExpand">
+                        <Entry Keyboard="Email"
+                               x:Name="EmailEntryField"
+                               Placeholder="Email Address"
+                               PlaceholderColor="Purple"
+                               Margin="20,0,10,0"/>
+                    </Border>
+                </StackLayout>
+
+                <!--Password-->
+                <StackLayout Orientation="Horizontal">
+
+                    <!--Password Icon-->
+                    <Border BackgroundColor="White" HeightRequest="50" WidthRequest="50" Stroke="Red" StrokeThickness="2"
+                            StrokeShape="RoundRectangle 10"
+                            Margin="0,50,0,0" ZIndex="1">
+                        <Image Source="password.png"/>
+                    </Border>
+
+                    <!--Border for Entry and Hide/Show password icon-->
+                    <Border BackgroundColor="White" HeightRequest="50" Stroke="Red" StrokeThickness="2" 
+                            StrokeShape="RoundRectangle 10" 
+                            HorizontalOptions="FillAndExpand"
+                            Margin="-15,50,0,0">
+                        <Grid>
+                            <Entry IsPassword="True" Placeholder="Password"
+                                   PlaceholderColor="Purple"
+                                   x:Name="PasswordEntryField"
+                                   Margin="20,0,50,0"/>
+                            <ImageButton  Source="hidepassword.png"
+                                          x:Name=" ShowHidePassword"  
+                                         Aspect="AspectFill"
+                                          HeightRequest="10"
+                                          WidthRequest="10"
+                                          Grid.Column="1"
+                                          Margin="0,0,10,0"
+                                          VerticalOptions="Center"
+                                          HorizontalOptions="End"
+                                          Clicked="ShowHidePassword_Clicked"
+                                            
+                                          />
+                        </Grid>
+
+                    </Border>
+                </StackLayout>
+
+                <!--Forgot Password-->
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Forgot Password" BackgroundColor="Transparent" TextColor="Black" FontAttributes="Bold"
+                            Margin="225,0,0,0"
+                            Clicked="Button_Clicked"/>
+
+                </StackLayout>
+
+                <!--Sign in -->
+                <Button Text="Sign in" 
+                        WidthRequest="150" 
+                        CornerRadius="10"
+                        Clicked="Button_Clicked_1"
+                        />
+
+                <!--Social media Section-->
+
+                <VerticalStackLayout Spacing="10" HorizontalOptions="Center" Margin="0,10,0,0">
+                    <Label Text="Or sign in with" TextColor="White" FontAttributes="Italic" HorizontalOptions="Center"/>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <!--Google-->
+                        <ImageButton  Source="google.png" HeightRequest="40" WidthRequest="40"/>
+                        <!--Facebook-->
+                        <ImageButton  Source="facebook.png" HeightRequest="100" WidthRequest="100"/>
+                        <ImageButton  Source="xicon.png" HeightRequest="40" WidthRequest="40"/>
+                        <ImageButton  Source="instagram.png" HeightRequest="40" WidthRequest="40"/>
+
+
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                <!--Dont have an account-->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+                <Label Text="Don't You have an account?" FontAttributes="Italic" />
+                <Button Text="Sign up here" BackgroundColor="Transparent" FontAttributes="Bold" TextColor="White"
+                        Clicked="Button_Clicked_2"
+                        Margin="0,-15,0,0"/>
+                </StackLayout>
+
+
+            </VerticalStackLayout>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

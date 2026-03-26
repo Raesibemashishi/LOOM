@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="logInn.SignUpHere"
+             Title="SignUpHere"
+             Shell.NavBarIsVisible="False">
+
+    <VerticalStackLayout Padding="10"
+                         BackgroundColor="Purple">
+        <Entry
+            Text="{Binding Name}" 
+            x:Name="NameEntryField"
+            Placeholder="Name"/>
+        <Entry
+            Text="{Binding Email}" 
+            x:Name="EmailEntryField"
+            Placeholder="Email"/>
+        <Entry
+            Text="{Binding Password}" 
+            x:Name="PasswordEntryField"
+            IsPassword="True"
+            Placeholder="Password"/>
+        <Button
+            Text="Save" 
+            x:Name="SaveButton"
+            Command="{Binding SaveCommand}"/>
+
+    </VerticalStackLayout>
+    
+</ContentPage>
