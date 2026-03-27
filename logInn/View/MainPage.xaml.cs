@@ -1,4 +1,7 @@
-﻿namespace logInn
+﻿using logInn.ViewModel;
+
+namespace logInn
+   
 {
     public partial class MainPage : ContentPage
     {
@@ -7,6 +10,9 @@
         public MainPage()
         {
             InitializeComponent();
+
+            //Connecting our page to the viewmodel
+            BindingContext = new SaveClientDetails();
         }
 
         private  async void Button_Clicked(object sender, EventArgs e)

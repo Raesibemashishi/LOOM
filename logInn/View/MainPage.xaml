@@ -105,6 +105,7 @@
                         WidthRequest="150" 
                         CornerRadius="10"
                         Clicked="Button_Clicked_1"
+                        Command="{Binding SignInCommand}"
                         />
 
                 <!--Social media Section-->
@@ -128,7 +129,7 @@
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
                 <Label Text="Don't You have an account?" FontAttributes="Italic" />
                 <Button Text="Sign up here" BackgroundColor="Transparent" FontAttributes="Bold" TextColor="White"
-                        Clicked="Button_Clicked_2"
+                        Clicked="Button_Clicked_2" Command="{Binding SignUpHereCommand}"
                         Margin="0,-15,0,0"/>
                 </StackLayout>
 
