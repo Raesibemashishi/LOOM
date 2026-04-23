@@ -1,5 +1,6 @@
 ﻿using logInn.Model;
 using SQLite;
+using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

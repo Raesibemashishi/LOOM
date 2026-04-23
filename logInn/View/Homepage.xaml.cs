@@ -9,6 +9,6 @@ public partial class Homepage : ContentPage
 		InitializeComponent();
 
         //Connecting our page to the viewmodel
-        BindingContext = new SaveClientDetails();
+        BindingContext = new SaveClientDetails(this);
     }
 }

@@ -95,7 +95,7 @@
                 <!--Forgot Password-->
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Forgot Password" BackgroundColor="Transparent" TextColor="Black" FontAttributes="Bold"
-                            Margin="225,0,0,0"
+                            Margin="200,0,0,0"
                             Clicked="Button_Clicked"/>
 
                 </StackLayout>
@@ -103,8 +103,7 @@
                 <!--Sign in -->
                 <Button Text="Sign in" 
                         WidthRequest="150" 
-                        CornerRadius="10"
-                        Clicked="Button_Clicked_1"
+                        CornerRadius="10"                      
                         Command="{Binding SignInCommand}"
                         />
 
@@ -129,7 +128,7 @@
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
                 <Label Text="Don't You have an account?" FontAttributes="Italic" />
                 <Button Text="Sign up here" BackgroundColor="Transparent" FontAttributes="Bold" TextColor="White"
-                        Clicked="Button_Clicked_2" Command="{Binding SignUpHereCommand}"
+                       Command="{Binding SignUpHereCommand}"
                         Margin="0,-15,0,0"/>
                 </StackLayout>
 
