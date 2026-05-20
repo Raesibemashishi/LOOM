@@ -49,6 +49,7 @@
                             StrokeShape="RoundRectangle 10" Margin="-15,50,0,0" HorizontalOptions="FillAndExpand">
                         <Entry Keyboard="Email"
                                x:Name="EmailEntryField"
+                               Text="{Binding Email}"
                                Placeholder="Email Address"
                                PlaceholderColor="Purple"
                                Margin="20,0,10,0"/>
@@ -73,6 +74,7 @@
                         <Grid>
                             <Entry IsPassword="True" Placeholder="Password"
                                    PlaceholderColor="Purple"
+                                   Text="{Binding Password}"
                                    x:Name="PasswordEntryField"
                                    Margin="20,0,50,0"/>
                             <ImageButton  Source="hidepassword.png"

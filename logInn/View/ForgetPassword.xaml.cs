@@ -14,9 +14,5 @@ public partial class ForgetPassword : ContentPage
         BindingContext = new SaveClientDetails(this);
     }
 
-    private async void DisplayInfomation_ItemTapped(object sender, ItemTappedEventArgs e)
-    {
-         var SelectClient = (SaveClientDetails)BindingContext;
-        await SelectClient.OnClientTapped((ClientDetails)e.Item);
-    }
+  
 }

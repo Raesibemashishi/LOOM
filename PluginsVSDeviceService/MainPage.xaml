@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PluginsVSDeviceService.MainPage"
+             Shell.NavBarIsVisible="False">
+
+   
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="25">
+
+           <Button Text="Take a photo"
+                   BackgroundColor="Blue"
+                   TextColor="Gold"
+                   Clicked="Button_Clicked"/>
+
+           <Button
+                Text="Upload a picture"
+                BackgroundColor="Orange"
+                TextColor="Blue"
+                Clicked="Button_Clicked_1"/>
+
+        <Image  x:Name="SelectdImage"
+                   WidthRequest="250"
+                   HeightRequest="250"
+                   Aspect="AspectFill"
+                   IsVisible="False"
+                   HorizontalOptions="Center" />
+
+
+    </VerticalStackLayout>
+   
+
+</ContentPage>

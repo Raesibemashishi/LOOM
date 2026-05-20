@@ -29,6 +29,8 @@ namespace logInn.ViewModel
         private string name;
         private string email;
         private string password;
+        private ClientDetails selectedClient;
+
        // private object existingClient;
 
 
@@ -72,6 +74,27 @@ namespace logInn.ViewModel
 
             }
         }
+
+
+        public ClientDetails SelectedClient
+        { 
+         get => selectedClient;
+            set 
+            {
+             if (selectedClient != value)
+                {
+                    selectedClient = value;
+                    OnPropertyChanged();
+
+                    if ( value != null)
+                    { 
+                      ClientTappedCommand.Execute(value);
+                        SelectedClient = null; // Clear the selection after handling the tap
+                    }
+                }
+            }
+
+        }
         //The end of the information to save to the DB
 
 
@@ -81,7 +104,8 @@ namespace logInn.ViewModel
         public ICommand SaveCommand { get; }
         public ICommand SignInCommand { get; }
         public ICommand SignUpHereCommand { get; }
-        
+         public ICommand ClientTappedCommand { get; }
+
         private Page page;
 
         //Constructor for the button
@@ -91,6 +115,7 @@ namespace logInn.ViewModel
             SaveEditedCommand = new Command(async () => await SaveEditedMethod());
             SignInCommand = new Command(async () => await SignInMethod());
             SignUpHereCommand = new Command(async () => await SignUpHereMethod());
+            ClientTappedCommand = new Command<ClientDetails>(async (client) => await OnClientTapped(client));
             page = _page;
            
             //Load Clients Details 
@@ -124,7 +149,44 @@ namespace logInn.ViewModel
         //This method will sign in the client to the app
         private async Task SignInMethod()
         {
-            await Shell.Current.GoToAsync("///HomePage");
+            //Check if all the fieldd are filled
+            if (string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(Email))
+            {
+                await Shell.Current.DisplayAlert("Message", "Fill all the fields", "OK");
+                return;
+
+            }
+            
+            //Use low cases for email
+            var normalizedEmail = Email.Trim().ToLower();
+              
+
+            //Check for matching Password and Email
+            var existingClient = await dBService.GetClientDetails();
+            var client = existingClient.FirstOrDefault(c => c.Email.Trim().ToLower() == normalizedEmail && c.Password == Password);
+            if (client != null)
+            {
+                await Shell.Current.DisplayAlert("Message", "Login Successful", "OK");
+
+                await Application.Current.MainPage.Navigation.PushAsync(new Homepage());
+
+                //Clear the fields
+
+                Email = string.Empty;
+                Password = string.Empty;
+
+                OnPropertyChanged(nameof(Email));
+                OnPropertyChanged(nameof(Password));
+            }
+            else
+            { 
+                await Shell.Current.DisplayAlert("Message", "Invalid Email or Password", "OK");
+                return;
+            }
+
+
+
+           
         }
 
 
@@ -151,7 +213,7 @@ namespace logInn.ViewModel
                 }
 
                 await Shell.Current.DisplayAlert("Message", "Saved Successfuly", "OK");
-                IsEditingMode = false;
+                IsEditingMode = false; 
                 EditingClient = null;
 
 

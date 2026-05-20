@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1UserControlz.Admin"
+             xmlns:local="clr-namespace:MauiApp1UserControlz"
+             Title="Admin">
+    <local:ProfileForm 
+    ProfileImage="dotnet_bot.png"
+    Name="karabo" 
+    Surname="Maake"
+    Email="karabomaake@gmail.com"/>
+    
+</ContentPage>

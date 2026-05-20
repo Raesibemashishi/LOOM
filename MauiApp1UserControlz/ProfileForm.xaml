@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1UserControlz.ProfileForm"
+             x:Name="this">
+
+
+    <Border
+            Padding="15"
+            Stroke="Pink"
+            >
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="15" />
+        </Border.StrokeShape>
+        
+        <VerticalStackLayout>
+          <!--Image-->
+            <Image Source="{Binding ProfileImage, Source={x:Reference this}}"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Center" Margin="0,0,0,20"/>
+            <!--Name-->
+            <Entry Placeholder="Name"
+                   Text="{Binding Name, Source={x:Reference this}}"
+                   Margin="0,0,0,10"/>
+            <!--Surname-->
+            <Entry Placeholder="Surname"
+                   Text="{Binding Surname, Source={x:Reference this}}"
+                   Margin="0,0,0,10"/>
+            <!--Email-->
+            <Entry Placeholder="Email"
+                   Text="{Binding Email, Source={x:Reference this}}"
+                   Margin="0,0,0,10"/>
+           
+
+            <!--Save Button-->
+            <Button Text="Save"
+                    Clicked="Button_Clicked"
+                    HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </Border>
+
+
+</ContentView>
